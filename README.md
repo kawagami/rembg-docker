@@ -9,5 +9,13 @@
 ```
 
 # 用法
-* 設定好圖片路徑資料夾 & 儲存資料夾名稱之後使用以下指令即可處理圖片去背
-* bash app.sh <IMAGENAME>
+* 先設定好 app.sh 中的圖片路徑資料夾 & 儲存資料夾名稱
+```shell
+# 先使用以下指令建立 rembg server
+docker-compose up -d
+
+# 等待 server 建立完成後(大概 30s)
+
+# 再使用以下指令即可簡單去背
+bash app.sh IMAGENAME
+```

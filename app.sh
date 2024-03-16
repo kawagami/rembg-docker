@@ -32,9 +32,5 @@ fi
 echo "開始處理圖片"
 mkdir -p $OUTPUTNAME
 
-# 取第一個參數
-docker run \
-    --rm \
-    -v $IMGPATH:/rembg \
-    -v $OUTPUTDIR:/output_dir \
-    danielgatis/rembg i $1 /output_dir/$1
+# 使用 rembg server 的版本
+curl -s -F file=@$IMGPATH/$1 "http://localhost:7000/api/remove" -o $OUTPUTDIR/$1
